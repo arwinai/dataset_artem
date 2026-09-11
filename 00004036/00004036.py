@@ -6,12 +6,14 @@ thickness = 3.0
 
 flower_petals_count = 9
 flower_petals_radius = 8.42
+flower_petals_ring_center = (0, 0.7)
 flower_petals_ring_radius = 24.37
 flower_petals_start_angle = 90.0
 flower_base_radius = 22.0
 
 flower = (
     cq.Workplane("XY")
+    .workplane(origin=flower_petals_ring_center)
     .polarArray(
         flower_petals_ring_radius, flower_petals_start_angle, 360, flower_petals_count
     )
